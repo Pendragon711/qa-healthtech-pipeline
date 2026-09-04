@@ -1,8 +1,10 @@
 {
   "name": "qa-healthtech-pipeline",
   "version": "1.0.0",
+  "description": "Pipeline de testes automatizados E2E e API para aplicação Healthtech",
+  "main": "index.js",
   "scripts": {
-    "test:api": "cd bruno && npx @usebruno/cli run --env-var baseurl=https://restful-booker.herokuapp.com",
+    "test:api": "cd bruno && npx @usebruno/cli run --env Production",
     "test:e2e": "cypress run",
     "test:all": "npm run test:api && npm run test:e2e"
   },
