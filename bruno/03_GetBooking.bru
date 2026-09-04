@@ -1,0 +1,27 @@
+meta {
+  name: 03_GetBooking
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/booking/{{bookingId}}
+  body: none
+  auth: none
+}
+
+headers {
+  Accept: application/json
+}
+
+tests {
+  test("Status code é 200 OK", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+
+  test("Valida dados do agendamento retornado", function() {
+    const data = res.getBody();
+    expect(data.firstname).to.equal('Carlos');
+    expect(data.lastname).to.equal('Silva');
+  });
+}

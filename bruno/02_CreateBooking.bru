@@ -1,0 +1,46 @@
+meta {
+  name: 02_CreateBooking
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/booking
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "firstname": "Carlos",
+    "lastname": "Silva",
+    "totalprice": 250,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2026-10-10",
+      "checkout": "2026-10-11"
+    },
+    "additionalneeds": "Consulta Cardiologia"
+  }
+}
+
+tests {
+  test("Status code é 200 OK", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+
+  test("Valida estrutura da resposta do agendamento", function() {
+    const data = res.getBody();
+    expect(data).to.have.property('bookingid');
+    expect(data.booking.firstname).to.equal('Carlos');
+    expect(data.booking.additionalneeds).to.equal('Consulta Cardiologia');
+
+    // Salva o ID da consulta para os próximos testes
+    bru.setVar("bookingId", data.bookingid);
+  });
+}
