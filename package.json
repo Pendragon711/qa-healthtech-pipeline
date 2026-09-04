@@ -2,12 +2,12 @@
   "name": "qa-healthtech-pipeline",
   "version": "1.0.0",
   "scripts": {
-    "test:api": "bru run ./bruno",
+    "test:api": "cd bruno && npx @usebruno/cli run",
     "test:e2e": "cypress run",
     "test:all": "npm run test:api && npm run test:e2e"
   },
   "devDependencies": {
-    "@usebruno/cli": "^1.20.0",
+    "@usebruno/cli": "^1.26.0",
     "cypress": "^13.0.0"
   }
 }
