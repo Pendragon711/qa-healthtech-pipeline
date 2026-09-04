@@ -2,7 +2,7 @@
   "name": "qa-healthtech-pipeline",
   "version": "1.0.0",
   "scripts": {
-    "test:api": "bru run bruno --env Production",
+    "test:api": "npx @usebruno/cli run bruno --env Production",
     "test:e2e": "cypress run",
     "test:all": "npm run test:api && npm run test:e2e"
   },
