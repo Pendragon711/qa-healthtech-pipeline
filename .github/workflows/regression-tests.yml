@@ -17,14 +17,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 22
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run Bruno API Tests
-        run: npx bru run bruno --env Production
+        run: npx @usebruno/cli run bruno --env Production
 
       - name: Run Cypress E2E Tests
         uses: cypress-io/github-action@v6
