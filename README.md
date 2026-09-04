@@ -1,6 +1,6 @@
 # 🏥 MedSchedule - Quality Engineering & Automated CI/CD Pipeline
 
-![CI/CD Pipeline](https://github.com/Pendragon711/qa-healthtech-pipeline/actions/workflows/main.yml/badge.svg?branch=main)
+[![Continuous Integration - Quality Engineering Pipeline](https://github.com/Pendragon711/qa-healthtech-pipeline/actions/workflows/regression-tests.yml/badge.svg)](https://github.com/Pendragon711/qa-healthtech-pipeline/actions/workflows/regression-tests.yml)
 ![Stack](https://img.shields.io/badge/Stack-Bruno%20%7C%20Cypress%20%7C%20GitHub%20Actions-blue)
 
 Projeto completo de **Quality Engineering** com foco em testes automatizados de **API REST** e **Interface Web (E2E)** integrados a uma pipeline de **Integração Contínua (CI/CD)** no GitHub Actions.
